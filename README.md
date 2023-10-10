@@ -140,8 +140,10 @@ db.players.find({team: "Lakers"});
 ```
 
 Run aggregation again
+
+```
 use("basketballDB");
-```db.players.aggregate([
+db.players.aggregate([
     {
       $group: {
         _id: "$team",
