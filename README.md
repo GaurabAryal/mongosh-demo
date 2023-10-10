@@ -112,18 +112,9 @@ db.createUser({
 })
 ```
 
-#### b. Enable Authentication:
-Edit the MongoDB configuration file (e.g., `mongod.conf`) and add:
-```
-security:
-  authorization: "enabled"
-```
-Then, restart the MongoDB server.
+### .mongoshrc.js
+You can build custom funcitons and call them from the shell!
 
-#### c. Connect with Authentication:
-```bash
-mongosh "mongodb://hoopsAdmin:basketball123@localhost:27017/basketballDB"
-```
 
 ## Switching to VS Code
 
