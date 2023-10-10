@@ -124,3 +124,34 @@ Then, restart the MongoDB server.
 ```bash
 mongosh "mongodb://hoopsAdmin:basketball123@localhost:27017/basketballDB"
 ```
+
+## Switching to VS Code
+
+Insert a player
+```
+use("basketballDB");
+db.players.insertOne({name: "Gaurab Aryal", assistsPerGame: 20, pointsPerGame: 45, reboundsPerGame: 8, team: "Lakers"});
+```
+
+Find players for a team
+```
+use("basketballDB");
+db.players.find({team: "Lakers"});
+```
+
+Run aggregation again
+use("basketballDB");
+```db.players.aggregate([
+    {
+      $group: {
+        _id: "$team",
+        avgPoints: {$avg: "$pointsPerGame"},
+        avgAssists: {$avg: "$assistsPerGame"},
+        avgRebounds: {$avg: "$reboundsPerGame"}
+      }
+    },
+    {
+      $sort: {avgPoints: -1}
+    }
+  ]);
+```
