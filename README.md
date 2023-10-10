@@ -157,3 +157,5 @@ db.players.aggregate([
     }
   ]);
 ```
+
+Talk through playgrounds & use cases for seeding dev environments, calling out to Gen AI, etc.
